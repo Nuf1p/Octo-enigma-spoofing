@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Stack_spoofing/Stack_spoofing.vcxproj" Id="8a7510a7-d4a3-4044-82c0-2e51e6a69a01" />
+</Solution>

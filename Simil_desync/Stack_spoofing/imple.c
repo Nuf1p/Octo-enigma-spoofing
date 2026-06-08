@@ -57,30 +57,6 @@ DWORD ProcessTextSection(PVOID pBaseAddr) {
 }
 
 
-
-/*
-*   Find ROP gadgets needed for the ROP chain
-*
-*   Given a module base address search for a specific ROP gadget
-*/
-PVOID FindRopGadget(
-    LPBYTE Module, 
-    ULONG Size, 
-    unsigned char* gadget, 
-    size_t gadgetSize
-)
-{
-    for (int x = 0; x < Size; x++)
-    {
-        if (memcmp(Module + x, gadget, gadgetSize) == 0)
-        {
-            return (PVOID)(Module + x);
-        };
-    };
-
-    return NULL;
-}
-
 /*
 *   Follow Incremental Link Table jmp entry
 */

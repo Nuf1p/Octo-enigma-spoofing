@@ -310,8 +310,7 @@ void InitFirst3frms(
         (LPBYTE)GetModuleHandle(L"kernel32.dll"),
         0x200000
     );
-    // p->Gadget_ss = CalculateFunctionStackSizeWrapper(p->trampoline);
-
+   
     PVOID pBaseThreadInitThunk  = (PBYTE)(GetProcAddress(LoadLibraryA("kernel32.dll"), "BaseThreadInitThunk"));
     DWORD BTITOffset            = ResolveOffset((PBYTE)pBaseThreadInitThunk);
     ReturnAddress               = (PBYTE)pBaseThreadInitThunk + BTITOffset;
@@ -350,7 +349,7 @@ void InitFirst3frms(
 }
 
 
-// "mov rsp, rbp; pop rbp; ret" 
+// "pop rbp; ret" 
 //
 //  Why this gadget?
 //      A ROP gadget must resides in a valid epilogue 

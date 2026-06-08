@@ -143,12 +143,6 @@ Spoof proc
     mov    [rdi], rbx                  ; Fixup member now holds the address of Fixup
     mov    rbx, rdi                    ; Address of param struct (Fixup) is moved into rbx
 
-    ; -----------------------------------------------------------------------
-    ; Syscall stuff. Shouldn't affect performance even if a syscall isnt made
-    ; -----------------------------------------------------------------------
-    ;mov    r10, rcx
-    ;mov    rax, [rdi + 72]
-    
     jmp    r11                         ; jmp to target func 
                                        ; CALL would push (and mess) a ret address into the stack   
 
